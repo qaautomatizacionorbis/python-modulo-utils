@@ -7,7 +7,7 @@ def getDate(region='America/Lima'):
     try:
         tz = pytz.timezone(region)
         fecha = datetime.now(tz)
-    except:
+    except Exception:
         print("OCURRIO UN ERROR INESPERADO , VERIFICAR QUE SE TENGA INSTALADO LA LIBRERIA: 'pytz' ")
     return fecha
 
@@ -17,6 +17,6 @@ def getDateString(region='America/Lima'):
     try:
         tz = pytz.timezone(region)
         fecha = datetime.now(tz)
-    except:
+    except Exception as exc:
         print("OCURRIO UN ERROR INESPERADO , VERIFICAR QUE SE TENGA INSTALADO LA LIBRERIA: 'pytz' ")
     return fecha.strftime("%d-%m-%Y %H:%M:%S")
